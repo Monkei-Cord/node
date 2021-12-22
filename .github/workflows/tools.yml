@@ -8,7 +8,7 @@ on:
 
 jobs:
   tools_update:
-    if: github.repository == 'nodejs/node'
+    if: github.repository == 'monkei-cord/monkei-node'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false  # Prevent other jobs from aborting if one fails
@@ -62,7 +62,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_USER_TOKEN }}
         with:
-          author: Node.js GitHub Bot <github-bot@iojs.org>
+          author: Monkei.js GitHub Bot <monkei-js-bot@descendo.anonaddy.me>
           body: "This is an automated update of ${{ matrix.id }} to ${{ env.NEW_VERSION }}."
           branch: "actions/tools-update-${{ matrix.id }}"  # Custom branch *just* for this Action.
           commit-message: "tools: update ${{ matrix.id }} to ${{ env.NEW_VERSION }}"
